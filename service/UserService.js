@@ -51,4 +51,5 @@ async function login(ctx) {
     return ResUtil.getSuccess({ uid: u.uid, username: u.username, status: u.status, permission: u.permission })
 }
 
+
 module.exports = { list, update, add, login }

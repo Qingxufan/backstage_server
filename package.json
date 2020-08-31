@@ -25,6 +25,7 @@
     "koa-views": "^6.2.0",
     "koa2-cors": "^2.0.6",
     "koa2-proxy-middleware": "0.0.4",
+    "moment": "^2.27.0",
     "mongodb": "^3.6.0",
     "mongoose": "^5.9.27",
     "pug": "^2.0.3"

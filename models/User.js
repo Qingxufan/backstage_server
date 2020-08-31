@@ -1,8 +1,5 @@
-//const mongoose = require('../utils/MongoUtil')
 const mongoose = require('mongoose');
-const config = require('../config/config')
-const db = config.mongodb.url
-mongoose.connect(db)
+const conns = require('../utils/MongoUtil')
 const UserScehma = new mongoose.Schema({
   uid:{ type: Number, required: true },
   username:{ type: String, required: true },
@@ -12,5 +9,5 @@ const UserScehma = new mongoose.Schema({
   createTime:{tyepe:Date}
 })
 UserScehma.set('toJSON', { virtuals: true })
-let user = mongoose.model('user',UserScehma)
+let user = conns.default_conn.model('user',UserScehma)
 module.exports = user
