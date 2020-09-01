@@ -1,10 +1,10 @@
 const ResUtil = require('../utils/ResUtil')
 const moment = require('moment');
-const config = require('../config/config')
 const source = require('../models/Source')
 const CommonUtil = require('../utils/CommonUtil')
 const UserSummary_total = require('../models/UserSummary_total')
 const UserSummary_day = require('../models/UserSummary_day')
+const GameSummary = require('../models/GameSummary')
 const Game = require('../models/Game')
 const Room = require('../models/Room')
 
@@ -30,7 +30,7 @@ async function getGoldChangeList(uid, time_range, changeType, page) {
      let count = await source.count(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
-     if (count < (current_page - 1) * page_size) {
+     if (count <= (current_page - 1) * page_size) {
           return ResUtil.getSuccess({ total: 0, list: [] });
      }
      let list = await source.find(query).sort({ timestamp: -1 }).skip((current_page - 1) * page_size).limit(page_size)
@@ -47,7 +47,7 @@ async function getGoldChangeNoGameList(uid, diff_range, changeType, page) {
      let count = await source.count(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
-     if (count < (current_page - 1) * page_size) {
+     if (count <= (current_page - 1) * page_size) {
           return ResUtil.getSuccess({ total: 0, list: [] });
      }
      let list = await source.find(query).skip((current_page - 1) * page_size).limit(page_size).sort({ timestamp: -1 })
@@ -64,10 +64,9 @@ async function giveAndReceiveList(uid, diff_range, page) {
      let count = await source.count(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
-     if (count < (current_page - 1) * page_size) {
+     if (count <= (current_page - 1) * page_size) {
           return ResUtil.getSuccess({ total: 0, list: [] });
      }
-     console.log(query)
      let list = await source.find(query).skip((current_page - 1) * page_size).limit(page_size).sort({ timestamp: -1 })
      return ResUtil.getSuccess({ total: count, list: list });
 }
@@ -91,7 +90,7 @@ async function getPlayerAccountList(uid, diff_range, search_item, page) {
      let count = await UserSummary_total.count(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
-     if (count < (current_page - 1) * page_size) {
+     if (count <= (current_page - 1) * page_size) {
           return ResUtil.getSuccess({ total: 0, list: [] });
      }
      let list = await UserSummary_total.find(query).sort({ [search_item]: -1 }).skip((current_page - 1) * page_size).limit(page_size)
@@ -144,54 +143,138 @@ async function getRealTimeData(search, page) {
 }
 
 async function getGameRecord(search, page) {
-     let game = null
-     let room = null
      let query = {}
      if (!search.game && !search.room && !search.round_id) {
           return ResUtil.resErr.param_lose;
      }
+     //game搜索条件
      if (search.game) {
           if (!CommonUtil.checkRate(search.game)) {
-               game = await Game.findOne({ "name": search.game })
+               let game = await Game.findOne({ "name": search.game })
+               query.game_id = game.game_id
           } else {
-               game = await Game.findOne({ "game_id": search.game })
+               query.game_id = search.game
           }
-          query.game_id = game.game_id
      }
-
+     //room 搜索条件
      if (search.room) {
           if (!CommonUtil.checkRate(search.room)) {
-               room = await Room.findOne({ "roomName": search.room })
+               let room = await Room.findOne({ "roomName": search.room })
+               query.room_id = room.room_id
           } else {
-               room = await Room.findOne({ "room_id": search.room })
+               query.room_id = search.room
           }
-          query.room_id = game.room_id
      }
 
      if (search.round_id) {
-          query.round_id = search.round_id
+          query.round = search.round_id
      }
-
      let count = await source.count(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
-     if (count < (current_page - 1) * page_size) {
+     if (count <= (current_page - 1) * page_size) {
           return ResUtil.getSuccess({ total: 0, list: [] });
      }
 
      let source_list = await source.find(query).sort({ timestamp: -1 }).skip((current_page - 1) * page_size).limit(page_size)
      let list = []
-     source_list.forEach(item=>{
-          item.roomName = room.roomName
-          item.roomName = room.roomName
+     let games = []
+     let rooms = []
+
+     source_list.forEach(item => {
+          if (!games.includes(item.game_id)) {
+               games.push(item.game_id)
+          }
+          if (!rooms.includes(item.room_id)) {
+               rooms.push(item.room_id)
+          }
      })
 
+     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1 ,"game_id":1})
+     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1,"room_id":1 })
+     source_list.forEach(item => {
+          let itemObj = item.toJSON()
+          game_list.forEach(item_game => {
+               if (item.game_id == item_game.game_id) {
+                    itemObj.game_name = item_game.name
+               }
 
+          })
 
+          room_list.forEach(item_room => {
+               if (item.room_id == item_room.room_id) {
+                    itemObj.room_name = item_room.roomName
+               }
+          })
 
+          list.push(itemObj)
+     })
      return ResUtil.getSuccess({ total: count, list: list });
 }
 
+async function getDataSummary(search, page) {
+     let query = {}
+     if (search.time_range) {
+          if (search.time_range[0]) {
+               query.todayTime = { $gt: search.time_range[0] }
+               if (search.time_range[1]) {
+                    query.todayTime.$lt = search.time_range[1]
+               }
+          } else {
+               if (search.time_range[1]) {
+                    query.todayTime = { $lt: search.time_range[1] }
+               }
+          }
+     }
 
-module.exports = { getGoldChangeList, getGoldChangeNoGameList, giveAndReceiveList, getPlayerAccountList, getRealTimeData, getGameRecord }
+     if (search.game_id) {
+          query.game_id = search.game_id
+     }
+
+     if (search.room_id) {
+          query.room_id = search.room_id
+     }
+
+     let current_page = page.current_page || 1
+     let page_size = page.page_size || 10
+
+     let count = await GameSummary.countDocuments(query) || 0
+     if (count <= (current_page - 1) * page_size) {
+          return ResUtil.getSuccess({ total: 0, list: [] });
+     }
+     let source_list = await GameSummary.find(query).sort({ "todayTime": -1 }).skip((current_page - 1) * page_size).limit(page_size)
+     let games = []
+     let rooms = []
+     source_list.forEach(item => {
+          if (!games.includes(item.game_id)) {
+               games.push(item.game_id)
+          }
+          if (!rooms.includes(item.room_id)) {
+               rooms.push(item.room_id)
+          }
+     })
+     let list = []
+     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1 ,"game_id":1})
+     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1,"room_id":1 })
+     source_list.forEach(item => {
+          let itemObj = item.toJSON()
+          game_list.forEach(item_game => {
+               if (item.game_id == item_game.game_id) {
+                    itemObj.game_name = item_game.name
+               }
+
+          })
+
+          room_list.forEach(item_room => {
+               if (item.room_id == item_room.room_id) {
+                    itemObj.room_name = item_room.roomName
+               }
+          })
+
+          list.push(itemObj)
+     })
+     return ResUtil.getSuccess({ total: count, list: list });
+}
+
+module.exports = { getGoldChangeList, getGoldChangeNoGameList, giveAndReceiveList, getPlayerAccountList, getRealTimeData, getGameRecord, getDataSummary }
 

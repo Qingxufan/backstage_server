@@ -11,5 +11,5 @@ const roomSchema = new mongoose.Schema({
     lobby_server: { type: Object },
 })
 roomSchema.set('toJSON', { virtuals: true })
-let game = conns.statistic_conn.model('room', roomSchema, "room")
+let game = conns.arcade_center_conn.model('room', roomSchema, "room")
 module.exports = game

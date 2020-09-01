@@ -26,4 +26,8 @@ router.post('/list_gameRecord', async ctx => {
     ctx.response.body = await StatisticController.list_gameRecord(ctx);
 })
 
+router.post('/list_dataSummary', async ctx => {
+    ctx.response.body = await StatisticController.list_dataSummary(ctx);
+})
+
 module.exports = router

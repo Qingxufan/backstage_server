@@ -94,4 +94,16 @@ async function list_gameRecord(ctx) {
     return await StatisticService.getGameRecord(search,page);
 }
 
-module.exports = { list_goldchange,list_goldChangeNoGame,list_giveAndReceive,list_playerAccount,list_realTimeData,list_gameRecord}
+async function list_dataSummary(ctx) {
+    let search = ctx.request.body.search;
+    let page = ctx.request.body.page
+    if(!page){
+        page = {
+            'current_page':1,
+            'page_size':10
+        }
+    }
+    return await StatisticService.getDataSummary(search,page);
+}
+
+module.exports = { list_goldchange,list_goldChangeNoGame,list_giveAndReceive,list_playerAccount,list_realTimeData,list_gameRecord,list_dataSummary}
