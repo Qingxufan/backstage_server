@@ -12,7 +12,8 @@ const staticResource = require('koa-static');
 const options = {
   targets: {
     '/backstage/(.*)': {
-      target: 'http://192.168.0.11:17002',//http://192.168.0.11:17002
+      //target: 'http://172.31.20.220:17002',
+      target: 'http://192.168.0.11:17002',
       changeOrigin: true,
       pathRewrite: {
         '/backstage': '',
@@ -40,6 +41,9 @@ app.use(cors({
   credentials:true,//默认情况下，Cookie不包括在CORS请求之中。设为true，即表示服务器许可Cookie可以包含在请求中
   origin: ctx => ctx.header.origin, // web前端服务器地址，注意这里不能用*
 }));
+
+
+
 app.use(async (ctx, next) => {
   let pass = securityUtil.Check(ctx);
   if (pass) {

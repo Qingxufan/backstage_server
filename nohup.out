@@ -1,0 +1,5 @@
+
+> backstage_server@0.1.0 start /home/uflink/backstage_server
+> node bin/www
+
+Listening on port 3000

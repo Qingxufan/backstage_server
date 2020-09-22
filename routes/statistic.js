@@ -30,4 +30,12 @@ router.post('/list_dataSummary', async ctx => {
     ctx.response.body = await StatisticController.list_dataSummary(ctx);
 })
 
+router.post('/getRoundDetail', async ctx => {
+    ctx.response.body = await StatisticController.getRoundDetail(ctx);
+})
+
+router.post('/getFisrtPageData', async ctx => {
+    ctx.response.body = await StatisticController.getFisrtPageData(ctx);
+})
+
 module.exports = router

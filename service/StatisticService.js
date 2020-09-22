@@ -27,7 +27,7 @@ async function getGoldChangeList(uid, time_range, changeType, page) {
      } else {
           query.type = { $lt: 10 }
      }
-     let count = await source.count(query) || 0
+     let count = await source.countDocuments(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
      if (count <= (current_page - 1) * page_size) {
@@ -44,7 +44,7 @@ async function getGoldChangeNoGameList(uid, diff_range, changeType, page) {
      } else if (diff_range[0] != undefined) {
           query.diff = { $gt: diff_range[0] }
      }
-     let count = await source.count(query) || 0
+     let count = await source.countDocuments(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
      if (count <= (current_page - 1) * page_size) {
@@ -61,7 +61,7 @@ async function giveAndReceiveList(uid, diff_range, page) {
      } else if (diff_range[0] != undefined) {
           query.diff = { $gt: diff_range[0] }
      }
-     let count = await source.count(query) || 0
+     let count = await source.countDocuments(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
      if (count <= (current_page - 1) * page_size) {
@@ -87,7 +87,7 @@ async function getPlayerAccountList(uid, diff_range, search_item, page) {
                query[search_item].$lt = diff_range[1]
           }
      }
-     let count = await UserSummary_total.count(query) || 0
+     let count = await UserSummary_total.countDocuments(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
      if (count <= (current_page - 1) * page_size) {
@@ -120,7 +120,7 @@ async function getRealTimeData(search, page) {
 
      }
      //总数据
-     let count = await UserSummary_total.count(query) || 0
+     let count = await UserSummary_total.countDocuments(query) || 0
      let total_list = await UserSummary_total.find(query).sort({ total_gold: -1 }).skip((current_page - 1) * page_size).limit(page_size)
      let uuids = []
      let today = moment().format('YYYY-MM-DD')
@@ -169,7 +169,8 @@ async function getGameRecord(search, page) {
      if (search.round_id) {
           query.round = search.round_id
      }
-     let count = await source.count(query) || 0
+     //console.log(query)
+     let count = await source.countDocuments(query) || 0
      let current_page = page.current_page || 1
      let page_size = page.page_size || 10
      if (count <= (current_page - 1) * page_size) {
@@ -190,8 +191,8 @@ async function getGameRecord(search, page) {
           }
      })
 
-     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1 ,"game_id":1})
-     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1,"room_id":1 })
+     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1, "game_id": 1 })
+     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1, "room_id": 1 })
      source_list.forEach(item => {
           let itemObj = item.toJSON()
           game_list.forEach(item_game => {
@@ -254,8 +255,8 @@ async function getDataSummary(search, page) {
           }
      })
      let list = []
-     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1 ,"game_id":1})
-     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1,"room_id":1 })
+     let game_list = await Game.find({ "game_id": { $in: games } }, { "name": 1, "game_id": 1 })
+     let room_list = await Room.find({ "room_id": { $in: rooms } }, { "roomName": 1, "room_id": 1 })
      source_list.forEach(item => {
           let itemObj = item.toJSON()
           game_list.forEach(item_game => {
@@ -276,5 +277,26 @@ async function getDataSummary(search, page) {
      return ResUtil.getSuccess({ total: count, list: list });
 }
 
-module.exports = { getGoldChangeList, getGoldChangeNoGameList, giveAndReceiveList, getPlayerAccountList, getRealTimeData, getGameRecord, getDataSummary }
+async function getRoundDetail(round, start_time) {
+     let query = { "round": round, "start_time": start_time }
+     let detail = await source.find(query, { "opt": 1, "uid": 1, "uc": 1 })
+     return ResUtil.getSuccess(detail);
+}
+
+async function getFisrtPageData() {
+     //let day = moment().format('YYYY-MM-DD');
+     let start_time = parseInt(moment().startOf('day').format('x'))
+     let day_player = await UserSummary_day.countDocuments({ 'todayTime': { $gt: start_time } })
+     let current_player = await UserSummary_day.countDocuments({ 'outTime': { $gt: Date.now() - 7200000 } })
+     let winLoseList = await GameSummary.find({ 'todayTime': { $gt: start_time }, room_id: 0 })
+     let day_player_wonLose = 0
+     if (winLoseList && winLoseList.length > 0) {
+          winLoseList.forEach(item => {
+               day_player_wonLose += item.winLose
+          })
+     }
+     return ResUtil.getSuccess({ day_player: day_player, current_player: current_player, day_player_wonLose: day_player_wonLose });
+}
+
+module.exports = { getGoldChangeList, getGoldChangeNoGameList, giveAndReceiveList, getPlayerAccountList, getRealTimeData, getGameRecord, getDataSummary, getRoundDetail, getFisrtPageData }
 

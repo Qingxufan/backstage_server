@@ -7,7 +7,7 @@ const statistic_url = config.statisticmongodb.url
 //主库连接
 const arcade_center_test_url = config.arcade_center_test.url 
 
-var default_conn = mongoose.createConnection(default_url)
-var statistic_conn = mongoose.createConnection(statistic_url)
-var arcade_center_conn = mongoose.createConnection(arcade_center_test_url)
+var default_conn = mongoose.createConnection(default_url,{ useNewUrlParser: true,useUnifiedTopology: true})
+var statistic_conn = mongoose.createConnection(statistic_url,{ useNewUrlParser: true,useUnifiedTopology: true})
+var arcade_center_conn = mongoose.createConnection(arcade_center_test_url,{ useNewUrlParser: true,useUnifiedTopology: true})
 module.exports = {default_conn,statistic_conn,arcade_center_conn}

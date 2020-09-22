@@ -1,6 +1,19 @@
 const User = require('../models/User')
 const ResUtil = require('../utils/ResUtil')
 
+// let fs = require('fs');
+
+// let options = {
+//     flags: 'a',     // append模式
+//     encoding: 'utf8',  // utf8编码
+// };
+
+// let stdout = fs.createWriteStream('./stdout.log', options);
+// let stderr = fs.createWriteStream('./stderr.log', options);
+
+// // 创建logger
+// let logger = new console.Console(stdout, stderr);
+
 async function list(username, permission) {
     let find;
     if (username) {
@@ -8,7 +21,7 @@ async function list(username, permission) {
     } else {
         find = { "permission": { $gt: permission } }
     }
-    let list = await User.find(find,{password:0,__v:0});
+    let list = await User.find(find, { password: 0, __v: 0 });
     return ResUtil.getSuccess(list);
 }
 
@@ -30,7 +43,7 @@ async function add(useradd) {
         maxu = { uid: 0 }
     }
     let uid = maxu.uid;
-    useradd.uid = parseInt(uid)+1;
+    useradd.uid = parseInt(uid) + 1;
     let user = new User(useradd);
     let res = await user.save()
     return ResUtil.success
@@ -39,10 +52,12 @@ async function add(useradd) {
 async function login(ctx) {
     let username = ctx.request.body.username;
     let password = ctx.request.body.password;
+    //logger.log(username + "," + password)
     if (!username || !password) {
         return ResUtil.resErr.param_lose;
     }
     let u = await User.findOne({ username: username, password: password, status: 1 });
+    //logger.log(u)
     if (!u) {
         return ResUtil.resErr.password_err;
     }
