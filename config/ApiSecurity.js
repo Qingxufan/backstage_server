@@ -50,7 +50,9 @@ module.exports = {
    "/statistic/list_realTimeData":2,
    "/statistic/list_gameRecord":2,
    "/statistic/list_dataSummary":2,
-   "/statistic/getFisrtPageData":2,
+   
+   
+   
 
 
   //本地服务

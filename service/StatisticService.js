@@ -137,6 +137,10 @@ async function getRealTimeData(search, page) {
                     total_day.day = item2
                }
           })
+          if (!total_day.day){
+               total_day.day =  {}
+          }
+          
           list.push(total_day)
      })
      return ResUtil.getSuccess({ total: count, list: list });

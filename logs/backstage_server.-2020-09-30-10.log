@@ -1,0 +1,4 @@
+[2020-09-30T10:44:18.268] [WARN] test - GET /static/css/app.d6c6079d3efae38ec97f5f2f3a3ea1dd.css {}
+[2020-09-30T10:44:18.271] [WARN] test - GET /static/js/manifest.11f3cfab30758ede1023.js {}
+[2020-09-30T10:44:18.273] [WARN] test - GET /static/js/vendor.d11d077ca4a26b93b537.js {}
+[2020-09-30T10:44:18.274] [WARN] test - GET /static/js/app.c3bb1f5a3f2bc1922822.js {}

@@ -1,0 +1,15 @@
+[2020-09-29T16:09:36.578] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:36.579] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:38.400] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-09-29T16:09:44.613] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:46.066] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:46.728] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:47.207] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:47.648] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:09:48.465] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:11:18.336] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:12:04.938] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:12:11.925] [WARN] test - POST /statistic/list_goldchange { uid: 1234, time_range: [], changeType: null, page: [Object] }
+[2020-09-29T16:12:19.177] [WARN] test - POST /statistic/list_playerAccount { uid: 162, diff_range: [], search_item: null, page: [Object] }
+[2020-09-29T16:15:06.334] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }
+[2020-09-29T16:15:10.661] [WARN] test - POST /statistic/list_gameRecord { search: [Object], page: [Object] }

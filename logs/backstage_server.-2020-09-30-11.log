@@ -1,0 +1,36 @@
+[2020-09-30T11:21:32.361] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-09-30T11:21:35.020] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-09-30T11:21:35.134] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:21:40.079] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:21:46.402] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:21:46.673] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:21:47.201] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:21:47.609] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:22:36.529] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:22:39.554] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:23:39.707] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-09-30T11:23:39.824] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:24:20.809] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:25:47.443] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:25:48.766] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:25:49.916] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:25:50.672] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:39:01.485] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:39:54.984] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:47:27.471] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:47:27.512] [WARN] test - GET /@/assets/favicon.ico {}
+[2020-09-30T11:49:33.516] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:49:33.559] [WARN] test - GET /static/image/favicon.ico {}
+[2020-09-30T11:50:38.813] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:50:45.746] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:51:23.614] [WARN] test - GET /static/image/favicon.ico {}
+[2020-09-30T11:52:40.115] [WARN] test - GET /static/image/favicon.ico {}
+[2020-09-30T11:52:46.362] [WARN] test - GET /static/im/favicon.ico {}
+[2020-09-30T11:52:58.618] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:53:18.249] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:53:19.710] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:54:39.257] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:54:40.162] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:54:42.754] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:54:51.254] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-09-30T11:55:51.913] [WARN] test - POST /statistic/getFisrtPageData {}
