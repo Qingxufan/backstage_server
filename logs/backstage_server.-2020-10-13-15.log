@@ -1,0 +1,38 @@
+[2020-10-13T15:05:39.437] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:06:41.639] [WARN] test - POST /backstage/user/get_user_info_bwb { uuids: [] }
+[2020-10-13T15:08:32.836] [WARN] test - POST /backstage/user/get_user_info_bwb { uuids: [] }
+[2020-10-13T15:13:47.442] [WARN] test - POST /user/get_user_info_bwb { uuids: [] }
+[2020-10-13T15:13:59.428] [WARN] test - POST /user/get_user_info_bwb { uuids: [] }
+[2020-10-13T15:15:48.110] [WARN] test - POST /statistic/list_goldChangeNoGame { uid: 1111, diff_range: [], changeType: 1, page: [Object] }
+[2020-10-13T15:16:00.596] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:16:21.462] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'fcea920f7412b5da7be0cf42b8c93759'
+}
+[2020-10-13T15:16:36.377] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:16:39.116] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T15:16:42.605] [WARN] test - POST /user/login { username: 'admin1', password: 'fcea920f7412b5da7be0cf42b8c93759' }
+[2020-10-13T15:16:42.667] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:16:53.838] [WARN] test - POST /statistic/list_goldchange { uid: 1111, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T15:17:04.229] [WARN] test - POST /statistic/list_goldchange { uid: 1111, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T15:17:16.430] [WARN] test - POST /statistic/list_goldchange { uid: 1111, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T15:17:30.129] [WARN] test - POST /statistic/list_playerAccount { uid: 5555, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T15:17:34.639] [WARN] test - POST /statistic/list_playerAccount { uid: 5555, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T15:17:54.527] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'e10adc3949ba59abbe56e057f20f883e'
+}
+[2020-10-13T15:17:57.763] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'fcea920f7412b5da7be0cf42b8c93759',
+  new: 'e10adc3949ba59abbe56e057f20f883e'
+}
+[2020-10-13T15:18:08.584] [WARN] test - POST /statistic/list_playerAccount { uid: 5555, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T15:18:12.900] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T15:18:18.001] [WARN] test - POST /statistic/list_playerAccount { uid: 1111, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T15:18:40.265] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:42:43.189] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:44:46.164] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T15:44:54.742] [WARN] test - POST /statistic/getFisrtPageData {}

@@ -1,0 +1,31 @@
+[2020-10-13T11:01:18.489] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:15:38.074] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:15:58.819] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:15:58.908] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:16:02.473] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:16:02.526] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:16:07.800] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:16:07.858] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:16:24.032] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:18:38.214] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:20:01.962] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:20:05.136] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:20:22.369] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:20:25.272] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:20:42.763] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:20:45.689] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T11:21:04.656] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:22:18.409] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:27:27.467] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:27:44.141] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T11:27:48.190] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:27:59.537] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T11:28:34.026] [WARN] test - POST /backstage/game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T11:30:21.990] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T11:30:22.050] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T11:30:32.211] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T11:31:52.973] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T11:45:05.569] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T11:48:29.829] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T11:48:51.723] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T11:49:26.037] [WARN] test - POST /manage/sys_config_list {}

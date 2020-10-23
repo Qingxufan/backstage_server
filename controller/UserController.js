@@ -66,5 +66,7 @@ async function loginout(ctx) {
     ctx.cookies.set('koa.sess', '', { maxAge: 1000 })
     return ResUtil.success;
 }
-
-module.exports = { list, update, register, login, loginout }
+async function updatePassword(ctx) {
+    return await UserService.updatePassword(ctx);
+}
+module.exports = { list, update, register, login, loginout,updatePassword }

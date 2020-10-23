@@ -1,0 +1,68 @@
+[2020-10-13T16:09:54.007] [WARN] test - POST /backstage/game/create_room {
+  game_id: null,
+  room_id: null,
+  roomName: '未命名',
+  roomIcon: 0,
+  desk_type: 0,
+  sort: 1,
+  roles: [],
+  tags: [],
+  type: 1,
+  lock_desk: false,
+  lobby_server: [Object],
+  game_option: [Object],
+  desk_option: [Object],
+  queue: [Object],
+  robot: [Object]
+}
+[2020-10-13T16:11:19.017] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'e10adc3949ba59abbe56e057f20f883e'
+}
+[2020-10-13T16:17:51.150] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'fcea920f7412b5da7be0cf42b8c93759'
+}
+[2020-10-13T16:17:51.187] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T16:17:57.981] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T16:18:01.381] [WARN] test - POST /user/login { username: 'admin1', password: 'fcea920f7412b5da7be0cf42b8c93759' }
+[2020-10-13T16:18:01.507] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:19:30.534] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:19:43.377] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'fcea920f7412b5da7be0cf42b8c93759',
+  new: 'e10adc3949ba59abbe56e057f20f883e'
+}
+[2020-10-13T16:19:43.398] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T16:23:16.431] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T16:23:16.472] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:23:32.564] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'fcea920f7412b5da7be0cf42b8c93759'
+}
+[2020-10-13T16:23:32.580] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T16:23:38.581] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T16:23:41.325] [WARN] test - POST /user/login { username: 'admin1', password: 'fcea920f7412b5da7be0cf42b8c93759' }
+[2020-10-13T16:23:41.358] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:24:20.126] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:24:20.980] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:24:32.521] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'fcea920f7412b5da7be0cf42b8c93759',
+  new: 'e10adc3949ba59abbe56e057f20f883e'
+}
+[2020-10-13T16:24:35.547] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T16:24:42.859] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T16:24:42.893] [WARN] test - POST /statistic/getFisrtPageData {}
+[2020-10-13T16:24:56.076] [WARN] test - POST /user/updatePassword {
+  username: 'admin1',
+  origin: 'e10adc3949ba59abbe56e057f20f883e',
+  new: 'fcea920f7412b5da7be0cf42b8c93759'
+}
+[2020-10-13T16:24:59.097] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T16:25:02.437] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T16:25:04.709] [WARN] test - POST /user/login { username: 'admin1', password: 'fcea920f7412b5da7be0cf42b8c93759' }
+[2020-10-13T16:25:04.767] [WARN] test - POST /statistic/getFisrtPageData {}

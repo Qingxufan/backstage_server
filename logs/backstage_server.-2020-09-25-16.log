@@ -1,4 +1,0 @@
-[2020-09-25T16:56:25.219] [WARN] test - POST /statistic/list_realTimeData { search: [Object], page: [Object] }
-[2020-09-25T16:56:26.839] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
-[2020-09-25T16:56:29.899] [WARN] test - POST /statistic/list_realTimeData { search: [Object], page: [Object] }
-[2020-09-25T16:57:00.109] [WARN] test - POST /statistic/list_realTimeData { search: [Object], page: [Object] }

@@ -59,4 +59,5 @@ module.exports = {
   '/user/list':2,
   '/user/register':2,
   '/user/update':2,
+  '/user/updatePassword':2
 }

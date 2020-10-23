@@ -1,0 +1,44 @@
+[2020-10-13T14:13:33.712] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:14:19.246] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:14:32.067] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:15:00.210] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:18:00.073] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:18:26.551] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T14:48:06.517] [WARN] test - POST /backstage/game/create_room {
+  game_id: 668,
+  room_id: null,
+  roomName: '未命名',
+  roomIcon: 0,
+  desk_type: 0,
+  sort: 1,
+  roles: [],
+  tags: [],
+  type: 1,
+  lock_desk: false,
+  lobby_server: [Object],
+  game_option: [Object],
+  desk_option: [Object],
+  queue: [Object],
+  robot: [Object]
+}
+[2020-10-13T14:48:25.701] [WARN] test - POST /backstage/game/create_room {
+  game_id: 668,
+  room_id: null,
+  roomName: '未命名',
+  roomIcon: 0,
+  desk_type: 0,
+  sort: 1,
+  roles: [],
+  tags: [],
+  type: 1,
+  lock_desk: false,
+  lobby_server: [Object],
+  game_option: [Object],
+  desk_option: [Object],
+  queue: [Object],
+  robot: [Object]
+}
+[2020-10-13T14:48:56.490] [WARN] test - POST /backstage/game/room_list { app_id: 1234, game_id: 668, channel_code: null }
+[2020-10-13T14:49:27.553] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T14:50:10.530] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T14:50:15.660] [WARN] test - POST /backstage/manage/sys_config_list {}

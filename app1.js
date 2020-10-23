@@ -8,7 +8,6 @@ const router = require('./routes/index')
 const cors = require('koa2-cors');
 const ResUtil = require('./utils/ResUtil');
 const staticResource = require('koa-static');
-const logger = require('./config/logger');
 const util = require('util');
 const config = require('./config/config')
 const options = {
@@ -44,6 +43,7 @@ app.use(cors({
 }));
 
 
+app.use(staticResource(__dirname + '/public'));
 
 app.use(async (ctx, next) => {
   let pass = securityUtil.Check(ctx);
@@ -54,7 +54,6 @@ app.use(async (ctx, next) => {
   }
 });
 
-app.use(staticResource(__dirname + '/public'));
 app.use(session(CONFIG, app));
 app.use(proxy(options));
 app.use(bodyparser({

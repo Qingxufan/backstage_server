@@ -1,2 +1,0 @@
-[2020-09-25T15:49:52.957] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
-[2020-09-25T15:50:02.592] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }

@@ -45,5 +45,11 @@ module.exports = {
 			message: "操作成功!",
 			data: data
 		}
+	},
+	getFail(msg) {
+		return {
+			code: 1001,
+			message: msg,
+		}
 	}
 };

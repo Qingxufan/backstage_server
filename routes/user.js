@@ -24,5 +24,9 @@ router.post('/loginout', async ctx=> {
   ctx.response.body= await UserController.loginout(ctx)
 })
 
+router.post('/updatePassword', async ctx=> {
+  ctx.response.body= await UserController.updatePassword(ctx)
+})
+
 
 module.exports = router

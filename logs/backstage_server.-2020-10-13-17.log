@@ -1,0 +1,49 @@
+[2020-10-13T17:26:15.447] [WARN] test - POST /game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:26:40.696] [WARN] test - POST /game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:26:40.700] [WARN] test - POST /game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:26:58.311] [WARN] test - POST /game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:29:09.536] [WARN] test - POST /backstage/game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:30:12.830] [WARN] test - POST /game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:31:45.166] [WARN] test - POST /statistic/list_goldchange { uid: 12234, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T17:32:05.423] [WARN] test - POST /statistic/list_goldchange { uid: 12234, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T17:32:26.301] [WARN] test - POST /statistic/list_goldchange { uid: 12234, time_range: [], changeType: null, page: [Object] }
+[2020-10-13T17:32:43.181] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T17:33:10.277] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T17:33:24.880] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T17:33:25.357] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T17:33:25.671] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T17:33:28.869] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T17:33:34.663] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T17:34:24.817] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:34:54.635] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:35:16.504] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:35:36.392] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:35:59.190] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:36:57.656] [WARN] test - POST /statistic/list_playerAccount { uid: 11111, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:37:13.799] [WARN] test - POST /statistic/list_playerAccount { uid: 11111, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:37:14.277] [WARN] test - POST /statistic/list_playerAccount { uid: 11111, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:37:22.077] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:41:12.321] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:41:35.546] [WARN] test - POST /statistic/list_playerAccount { uid: 1231, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:41:48.092] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:41:48.123] [WARN] test - POST /backstage/user/get_user_info_bwb { uuids: [Array] }
+[2020-10-13T17:42:07.303] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:42:07.327] [WARN] test - POST /backstage/user/get_user_info_bwb { uuids: [Array] }
+[2020-10-13T17:42:21.934] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:42:35.685] [WARN] test - POST /backstage/game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:43:08.623] [WARN] test - POST /backstage/game/game_list { app_id: 1234, channel_code: '' }
+[2020-10-13T17:43:27.179] [WARN] test - POST /backstage/manage/get_uc { uuid: 10010068088 }
+[2020-10-13T17:43:36.256] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:44:04.751] [WARN] test - POST /backstage/game/node_list { app_id: 1234, channel_code: '', boss_id: 101 }
+[2020-10-13T17:44:17.684] [WARN] test - POST /backstage/manage/sys_config_list {}
+[2020-10-13T17:47:13.834] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T17:47:20.919] [WARN] test - POST /manage/sys_config_list {}
+[2020-10-13T17:47:36.175] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:48:29.041] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:49:00.565] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:49:09.580] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:49:19.958] [WARN] test - POST /user/loginout { username: 'admin1' }
+[2020-10-13T17:49:31.139] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:49:36.977] [WARN] test - POST /user/login { username: 'admin1', password: 'e10adc3949ba59abbe56e057f20f883e' }
+[2020-10-13T17:49:43.428] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }
+[2020-10-13T17:49:49.948] [WARN] test - POST /statistic/list_playerAccount { uid: 10010068088, diff_range: [], search_item: null, page: [Object] }

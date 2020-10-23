@@ -2,7 +2,7 @@
 module.exports = {
     mode: 'test',//test dev prod
     dev: {
-        proxy_url:'http://192.168.0.11:17002',
+        proxy_url:'http://192.168.0.103:54001',
         mongodb: {
             backstage_url: 'mongodb://127.0.0.1:27017/backstage',
             statistic_url: 'mongodb://127.0.0.1:27017/statistic',
@@ -26,3 +26,4 @@ module.exports = {
         }
     }
 }
+

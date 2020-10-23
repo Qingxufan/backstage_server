@@ -62,9 +62,35 @@ async function login(ctx) {
         return ResUtil.resErr.password_err;
     }
     ctx.session.userinfo = { uid: u.uid, username: u.username, status: u.status, permission: u.permission }
-
     return ResUtil.getSuccess({ uid: u.uid, username: u.username, status: u.status, permission: u.permission })
 }
 
+async function updatePassword(ctx) {
+    // let u = await User.countDocuments({ username: username, password: origin_password })
+    // if (!u) {
+    //     return ResUtil.getFail("原密码错误!")
+    // }
+    let username = ctx.request.body.username
+    let origin_password = ctx.request.body.origin
+    let new_password = ctx.request.body.new
+    if (!username || !origin_password || !new_password) {
+        return ResUtil.resErr.param_lose;
+    }
+    let res = await User.updateOne({ username: username, password: origin_password }, { password: new_password })
+    if (res && res.n == 0) {
+        return ResUtil.getFail("原密码错误!")
+    }
+    if (res && res.nModified == 1) {
+        console.log(ctx.session.userinfo)
+        ctx.session.userinfo = null
+        ctx.cookies.set('koa.sess', '', { maxAge: 1000 })
+        return ResUtil.success
+    }
+    if (res && res.n == 1 && res.nModified == 0) {
+        return ResUtil.getFail("原密码和新密码相同!")
+    }
+    return ResUtil.error
+}
 
-module.exports = { list, update, add, login }
+
+module.exports = { list, update, add, login, updatePassword }
